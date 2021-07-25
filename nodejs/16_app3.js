@@ -5,12 +5,15 @@ var url = require('url');
 var app = http.createServer(function(request, response)
 {
     var _url = request.url;
-    var queryData = url.parse(_url, ture).query;
+    var queryData = url.parse(_url, true).query;
     var pathname = url.parse(_url, true).pathname;
 
     console.log(url.parse(_url,true));
-    console.log(url.parse(_url, treu).id);
-    console.log(url.parse(_url, treu).pathname);
+    console.log("_url: " + _url);
+    console.log("url.parse(_url, true).id: " + url.parse(_url, true).id);
+    console.log("url.parse(_url, true).pathname: " + url.parse(_url, true).pathname);
+    // console.log(queryData);
+    // console.log(pathname);
 
     if(pathname = '/')
     {
@@ -19,7 +22,7 @@ var app = http.createServer(function(request, response)
             fs.readdir('./data', function(error, filelist)
             {
                 console.log(filelist);
-                var titile = 'Welcome';
+                var title = 'Welcome';
                 var description = 'Hello, Node.js';
                 var list = '<ul>';
                 var i = 0;
@@ -39,7 +42,7 @@ var app = http.createServer(function(request, response)
                 <body>
                     <h1><a href="/">WEB</a></h1>
                     ${list}
-                    <h2>${titile}</h2>
+                    <h2>${title}</h2>
                     <p>${description}</p>
                 </body>
                 </html>
@@ -52,7 +55,7 @@ var app = http.createServer(function(request, response)
             fs.readdir('./data', function(error, filelist)
             {
                 console.log(filelist);
-                var titile = 'Welcome';
+                var title = 'Welcome';
                 var description = 'Hello, Node.js';
                 var list = '<ul>';
                 var i = 0;
@@ -74,7 +77,7 @@ var app = http.createServer(function(request, response)
                     <body>
                         <h1><a href="/">WEB</a></h1>
                         ${list}
-                        <h2>${titile}</h2>
+                        <h2>${title}</h2>
                         <p>${description}</p>
                     </body>
                     </html>
